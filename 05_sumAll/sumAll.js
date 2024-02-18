@@ -11,8 +11,15 @@ const sumAll = function(num1, num2) {
     } else if (typeof num1 != "number" || typeof num2 != "number") {
         return 'ERROR';
     }
-    for (i = num1; i <= num2; i++) {
-        sum += i;
+    if (num1 < num2) {
+        for (i = num1; i <= num2; i++) {
+            sum += i;
+        }
+    } else {
+        for (i = num2; i <= num1; i++) {
+            sum += i;
+        }
+
     }
     return sum;
 };
