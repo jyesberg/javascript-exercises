@@ -5,21 +5,20 @@
 // outside the loop, return sum
 
 const sumAll = function(num1, num2) {
-    sum = 0;
+    sum = 0;    
     if (num1 < 0 || num2 < 0) {
         return 'ERROR';
-    } else if (typeof num1 != "number" || typeof num2 != "number") {
+    }
+    if (typeof num1 != "number" || typeof num2 != "number") {
         return 'ERROR';
     }
-    if (num1 < num2) {
-        for (i = num1; i <= num2; i++) {
-            sum += i;
-        }
-    } else {
-        for (i = num2; i <= num1; i++) {
-            sum += i;
-        }
-
+    if (num1 > num2) {
+        const temp = num1;
+        num1 = num2;
+        num2 = temp;
+    }    
+    for (i = num1; i <= num2; i++) {
+        sum += i;
     }
     return sum;
 };
