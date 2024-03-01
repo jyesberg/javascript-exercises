@@ -1,4 +1,4 @@
-let palindromes = function (str) {
+const palindromes = function (str) {
     str = str.toLowerCase().replace(/[^a-z0-9]/g, '');
     let stringReverse = str.split("").reverse().join('');
     if (stringReverse === str) {
